@@ -50,7 +50,7 @@ public class KyuubiJDBC {
   public static void main(String[] args) throws SQLException {
     try (Connection conn = DriverManager.getConnection(kyuubiJdbcUrl)) {
       try (Statement stmt = conn.createStatement()) {
-        try (ResultSet rs = st.executeQuery("show databases")) {
+        try (ResultSet rs = stmt.executeQuery("show databases")) {
           while (rs.next()) {
             System.out.println(rs.getString(1));
           }
